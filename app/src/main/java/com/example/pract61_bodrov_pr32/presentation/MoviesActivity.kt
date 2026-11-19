@@ -27,10 +27,7 @@ class MoviesActivity : ComponentActivity() {
                 val titles = listOf("The Witcher", "Jessica Jones", "The Magicians")
 
                 for (title in titles) {
-                    val result = MovieApi.service.searchMovies(
-                        MovieApi.API_KEY,
-                        title
-                    )
+                    val result = MovieApi.service.searchMovies(MovieApi.API_KEY,title)
 
                     val movies = result.Search
 
@@ -39,6 +36,7 @@ class MoviesActivity : ComponentActivity() {
                             addMovie(movieContainer, movie)
                         }
                     }
+
                 }
 
             } catch (e: Exception) {
@@ -47,6 +45,7 @@ class MoviesActivity : ComponentActivity() {
                     "Ошибка загрузки фильмов",
                     Toast.LENGTH_LONG
                 ).show()
+
             }
         }
     }

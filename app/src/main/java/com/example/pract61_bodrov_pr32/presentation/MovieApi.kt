@@ -32,8 +32,7 @@ object MovieApi {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val service: MovieApiService =
-        retrofit.create(MovieApiService::class.java)
+    val service: MovieApiService = retrofit.create(MovieApiService::class.java)
 
     const val API_KEY = "e5b26486"
 }
